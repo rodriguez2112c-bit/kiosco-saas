@@ -1,13 +1,14 @@
 [build]
-  command = "pnpm install && pnpm --filter web exec vite build"
+  command = "pnpm install --no-frozen-lockfile && pnpm --filter web build"
   publish = "apps/web/dist"
 
 [build.environment]
   NODE_VERSION = "22"
+  PNPM_VERSION = "9.12.3"
 
 [[redirects]]
   from = "/api/*"
-  to = "https://TU-API.onrender.com/api/:splat"
+  to = "https://kiosco-saas.onrender.com/api/:splat"
   status = 200
   force = true
 
