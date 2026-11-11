@@ -1,10 +1,11 @@
 [build]
-  command = "pnpm install --no-frozen-lockfile && pnpm --filter web build"
+  command = "pnpm install --no-frozen-lockfile --prefer-offline && pnpm --filter web build"
   publish = "apps/web/dist"
 
 [build.environment]
   NODE_VERSION = "22"
   PNPM_VERSION = "9.12.3"
+  CI = "false"
 
 [[redirects]]
   from = "/api/*"
